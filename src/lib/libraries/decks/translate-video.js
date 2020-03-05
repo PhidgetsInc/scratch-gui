@@ -129,6 +129,12 @@ const videos = {
     },
     'talking': {
         en: 'j0208mq4qi'
+    },
+    'phidgets_gettingstarted':{
+        en: 'phidgets-YOMrQGB03IM'
+    },
+    'phidgets_mot1101':{
+        en: 'phidgets-PTVgFdImkA0'
     }
 };
 

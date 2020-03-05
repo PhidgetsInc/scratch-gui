@@ -7,6 +7,9 @@ import {setFullScreen, setPlayer} from './reducers/mode';
 import {remixProject} from './reducers/project-state';
 import {setAppElement} from 'react-modal';
 
+import './phidget22.min.js';
+import './sha256.min.js';
+
 const guiReducers = {
     locales: LocalesReducer,
     scratchGui: GuiReducer,

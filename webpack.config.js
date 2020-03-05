@@ -168,6 +168,10 @@ module.exports = [
                 to: 'static'
             }]),
             new CopyWebpackPlugin([{
+                from: 'projects',
+                to: 'projects'
+            }]),
+            new CopyWebpackPlugin([{
                 from: 'node_modules/scratch-blocks/media',
                 to: 'static/blocks-media'
             }]),

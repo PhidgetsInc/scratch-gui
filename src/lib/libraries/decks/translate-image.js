@@ -18,6 +18,7 @@ const translations = {
 };
 
 const loadImageData = locale => {
+    debugger;
     if (translations.hasOwnProperty(locale)) {
         translations[locale]()
             .then(newImages => {

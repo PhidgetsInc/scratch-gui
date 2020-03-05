@@ -88,59 +88,83 @@ const CardHeader = ({onCloseCards, onShrinkExpandCards, onShowAll, totalSteps, s
 class VideoStep extends React.Component {
 
     componentDidMount () {
-        const script = document.createElement('script');
-        script.src = `https://fast.wistia.com/embed/medias/${this.props.video}.jsonp`;
-        script.async = true;
-        script.setAttribute('id', 'wistia-video-content');
-        document.body.appendChild(script);
+            const script = document.createElement('script');
+            script.src = `https://fast.wistia.com/embed/medias/${this.props.video}.jsonp`;
+            script.async = true;
+            script.setAttribute('id', 'wistia-video-content');
+            document.body.appendChild(script);
 
-        const script2 = document.createElement('script');
-        script2.src = 'https://fast.wistia.com/assets/external/E-v1.js';
-        script2.async = true;
-        script2.setAttribute('id', 'wistia-video-api');
-        document.body.appendChild(script2);
+            const script2 = document.createElement('script');
+            script2.src = 'https://fast.wistia.com/assets/external/E-v1.js';
+            script2.async = true;
+            script2.setAttribute('id', 'wistia-video-api');
+            document.body.appendChild(script2);
     }
 
     // We use the Wistia API here to update or pause the video dynamically:
     // https://wistia.com/support/developers/player-api
-    componentDidUpdate (prevProps) {
-        // Ensure the wistia API is loaded and available
-        if (!(window.Wistia && window.Wistia.api)) return;
+    componentDidUpdate (prevProps) {        
+        if(!(this.props.video).includes("phidgets-") && !(prevProps.video).includes("phidgets-")) {
+            // Ensure the wistia API is loaded and available
+            if (!(window.Wistia && window.Wistia.api)) return;
 
-        // Get a handle on the currently loaded video
-        const video = window.Wistia.api(prevProps.video);
+            // Get a handle on the currently loaded video
+            const video = window.Wistia.api(prevProps.video);
 
-        // Reset the video source if a new video has been chosen from the library
-        if (prevProps.video !== this.props.video) {
-            video.replaceWith(this.props.video);
-        }
+            // Reset the video source if a new video has been chosen from the library
+            if (prevProps.video !== this.props.video) {
+                video.replaceWith(this.props.video);
+            }
 
-        // Pause the video if the modal is being shrunken
-        if (!this.props.expanded) {
-            video.pause();
+            // Pause the video if the modal is being shrunken
+            if (!this.props.expanded) {
+                video.pause();
+            }
         }
     }
 
-    componentWillUnmount () {
-        const script = document.getElementById('wistia-video-content');
-        script.parentNode.removeChild(script);
+    componentWillUnmount () {        
+        if(!(this.props.video).includes("phidgets-")) {
+            const script = document.getElementById('wistia-video-content');
+            script.parentNode.removeChild(script);
 
-        const script2 = document.getElementById('wistia-video-api');
-        script2.parentNode.removeChild(script2);
+            const script2 = document.getElementById('wistia-video-api');
+            script2.parentNode.removeChild(script2);
+        }
     }
 
     render () {
-        return (
-            <div className={styles.stepVideo}>
-                <div
-                    className={`wistia_embed wistia_async_${this.props.video}`}
-                    id="video-div"
-                    style={{height: `257px`, width: `466px`}}
-                >
-                    &nbsp;
+        const phidgetsVideo = (this.props.video).includes("phidgets-");
+        const phidVid = (this.props.video).substring(9, this.props.video.length);
+        if(phidgetsVideo)
+        {
+            return (
+                <div className={styles.stepVideo}>
+                    <iframe 
+                        width="466px"
+                        height="257px"
+                        src={`https://www.youtube.com/embed/${phidVid}`}
+                        frameBorder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowFullScreen>
+
+                    </iframe>
                 </div>
-            </div>
-        );
+            )
+        }
+        else{
+            return (
+                <div className={styles.stepVideo}>
+                    <div
+                        className={`wistia_embed wistia_async_${this.props.video}`}
+                        id="video-div"
+                        style={{height: `257px`, width: `466px`}}
+                    >
+                        &nbsp;
+                    </div>
+                </div>
+            );
+        }
     }
 }
 

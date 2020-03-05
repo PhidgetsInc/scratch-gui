@@ -62,7 +62,106 @@ import addEffectsThumb from './thumbnails/add-effects.jpg';
 import moveArrowKeysThumb from './thumbnails/move-arrow-keys.jpg';
 import spinThumb from './thumbnails/spin.jpg';
 
+// Phidgets
+import starterKit from './thumbnails/phidgets_starterkit.jpg';
+import phidgetsMOT1101 from './thumbnails/phidgets_MOT1101.jpg';
+
 export default {
+
+
+    'phidgets-projects':{
+        name: (
+            <FormattedMessage
+                defaultMessage="Download Phidgets Scratch Projects"
+                description="Name for the 'Download Projects' how-to"
+                id="phidgets.howtos.projects.name"
+            />
+        ),
+        tags: ['phidgets', 'hardware', 'projects'],
+        requiredProjectId: 'phidgets',
+        img: starterKit,
+        steps:[{
+            video: 'phidgets_gettingstarted'
+        }],
+        urlId: 'phidgetsprojects'
+    },
+    'phidgets-getting-started':{
+        name: (
+            <FormattedMessage
+                defaultMessage="Getting Started with Phidgets"
+                description="Name for the 'Gettings Started with Phidgets' how-to"
+                id="phidgets.howtos.getting-started.name"
+            />
+        ),
+        tags: ['phidgets', 'hardware'],
+        //requiredProjectId: 'phidgets',
+        img: starterKit,
+        steps:[{
+            video: 'phidgets_gettingstarted'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Connect yo stuffs"
+                    description="Step name for 'Connect to stuffs' step"
+                    id="phidgets.howtos.getting-started.step_connectYoStuffs"
+                />
+            ),
+            image: 'phidgetsGettingstartedConnect'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Click the 'Stop' button to close all attached Phidgets. Any Phidget HATs and monitored variables will automatically reconnect."
+                    description="Step name for 'Close' step"
+                    id="phidgets.howtos.getting-started.step_close"
+                />
+            ),
+            image: 'phidgetsGenericClose'
+        }],
+        urlId: 'GettingStarted'
+    },
+    'phidgets-motion':{
+        name: (
+            <FormattedMessage
+                defaultMessage="Using the MOT1101"
+                description="Name for the 'Using the MOT1101' how-to"
+                id="phidgets.howtos.motion.name"
+            />
+        ),
+        tags: ['phidgets', 'hardware', 'motion', 'MOT1101'],
+        //requiredProjectId: 'phidgets',
+        img: phidgetsMOT1101,
+        steps:[{
+            video: 'phidgets_mot1101'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Connect yo stuffs"
+                    description="Step name for 'Connect to stuffs' step"
+                    id="phidgets.howtos.motion.step_connectYoStuffs"
+                />
+            ),
+            image: 'phidgetsMOT1101Connect'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Click the different sprites to see how you can use acceleration and gyroscope data"
+                    description="Step name for 'Click the different sprites' step"
+                    id="phidgets.howtos.motion.step_clicksprites"
+                />
+            ),
+            image: 'phidgetsMOT1101ClickSprites'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Click the 'Stop' button to close all attached Phidgets. Any Phidget HATs and monitored variables will automatically reconnect."
+                    description="Step name for 'Close' step"
+                    id="phidgets.howtos.motion.step_close"
+                />
+            ),
+            image: 'phidgetsGenericClose'
+        }],
+        urlId: 'ExampleMOT1101'
+    },
 
     'intro-move-sayhello': {
         name: (

@@ -198,7 +198,18 @@ import talesChooseSound from './steps/talking-11-choose-sound.en.gif';
 import talesDanceMoves from './steps/talking-12-dance-moves.en.gif';
 import talesAskAnswer from './steps/talking-13-ask-and-answer.en.gif';
 
+// Phidgets
+import phidgetsGettingstartedConnect from './steps/phidgets-gettingstarted-connect.jpg';
+import phidgetsMOT1101Connect from './steps/phidgets-MOT1101-connect.jpg';
+import phidgetsMOT1101ClickSprites from './steps/phidgets-MOT1101-clicksprites.jpg';
+import phidgetsGenericClose from './steps/phidgets-generic-close.jpg';
+
 const enImages = {
+    //Phidgets
+    phidgetsGettingstartedConnect: phidgetsGettingstartedConnect,
+    phidgetsGenericClose: phidgetsGenericClose,
+    phidgetsMOT1101Connect: phidgetsMOT1101Connect,
+    phidgetsMOT1101ClickSprites: phidgetsMOT1101ClickSprites,
     // Intro
     introMove: introMove,
     introSayHello: introSayHello,

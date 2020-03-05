@@ -51,6 +51,22 @@ import phidgetsInsetIconURL from './phidgets/phidgets_small.png';
 
 export default [
     {
+        name: 'Phidgets Inc',
+            extensionId: 'phidget22',
+            collaborator: 'Erik',
+            iconURL: phidgetsIconURL,
+            insetIconURL: null,
+            description: (
+                <FormattedMessage
+                    defaultMessage="Do some sweet hardware stuff with Phidgets."
+                    description="This is a good description that was entered!"
+                    id="gui.extension.phidget22.description"
+                />
+            ),
+            featured: true,
+            disabled: false,        
+    },
+    {
         name: (
             <FormattedMessage
                 defaultMessage="Music"
@@ -320,21 +336,5 @@ export default [
     //         />
     //     ),
     //     helpLink: 'https://scratch.mit.edu/vernier'
-    // },
-    {
-        name: 'Phidgets Inc',
-        extensionId: 'phidget22',
-        collaborator: 'Erik',
-        iconURL: phidgetsIconURL,
-        insetIconURL: null,
-        description: (
-            <FormattedMessage
-                defaultMessage="Do some sweet hardware stuff with Phidgets."
-                description="This is a good description that was entered!"
-                id="gui.extension.phidget22.description"
-            />
-        ),
-        featured: true,
-        disabled: false,
-    }
+    // }
 ];
