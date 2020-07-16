@@ -64,7 +64,7 @@ export default [
                 />
             ),
             featured: true,
-            disabled: false,        
+            disabled: false,
     },
     {
         name: (
@@ -86,46 +86,46 @@ export default [
         ),
         featured: true
     },
-    // {
-    //     name: (
-    //         <FormattedMessage
-    //             defaultMessage="Pen"
-    //             description="Name for the 'Pen' extension"
-    //             id="gui.extension.pen.name"
-    //         />
-    //     ),
-    //     extensionId: 'pen',
-    //     iconURL: penIconURL,
-    //     insetIconURL: penInsetIconURL,
-    //     description: (
-    //         <FormattedMessage
-    //             defaultMessage="Draw with your sprites."
-    //             description="Description for the 'Pen' extension"
-    //             id="gui.extension.pen.description"
-    //         />
-    //     ),
-    //     featured: false
-    // },
-    // {
-    //     name: (
-    //         <FormattedMessage
-    //             defaultMessage="Video Sensing"
-    //             description="Name for the 'Video Sensing' extension"
-    //             id="gui.extension.videosensing.name"
-    //         />
-    //     ),
-    //     extensionId: 'videoSensing',
-    //     iconURL: videoSensingIconURL,
-    //     insetIconURL: videoSensingInsetIconURL,
-    //     description: (
-    //         <FormattedMessage
-    //             defaultMessage="Sense motion with the camera."
-    //             description="Description for the 'Video Sensing' extension"
-    //             id="gui.extension.videosensing.description"
-    //         />
-    //     ),
-    //     featured: false
-    // },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Pen"
+                description="Name for the 'Pen' extension"
+                id="gui.extension.pen.name"
+            />
+        ),
+        extensionId: 'pen',
+        iconURL: penIconURL,
+        insetIconURL: penInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Draw with your sprites."
+                description="Description for the 'Pen' extension"
+                id="gui.extension.pen.description"
+            />
+        ),
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Video Sensing"
+                description="Name for the 'Video Sensing' extension"
+                id="gui.extension.videosensing.name"
+            />
+        ),
+        extensionId: 'videoSensing',
+        iconURL: videoSensingIconURL,
+        insetIconURL: videoSensingInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Sense motion with the camera."
+                description="Description for the 'Video Sensing' extension"
+                id="gui.extension.videosensing.description"
+            />
+        ),
+        featured: false
+    },
     // {
     //     name: (
     //         <FormattedMessage
