@@ -202,14 +202,19 @@ import talesAskAnswer from './steps/talking-13-ask-and-answer.en.gif';
 import phidgetsGettingstartedConnect from './steps/phidgets-gettingstarted-connect.jpg';
 import phidgetsMOT1101Connect from './steps/phidgets-MOT1101-connect.jpg';
 import phidgetsMOT1101ClickSprites from './steps/phidgets-MOT1101-clicksprites.jpg';
+import phidgetsHIN1100Connect from './steps/phidgets-HIN1100-connect.jpg';
+import phidgetsHIN1100MoveSprite from './steps/phidgets-HIN1100-movesprite.jpg';
 import phidgetsGenericClose from './steps/phidgets-generic-close.jpg';
 
 const enImages = {
     //Phidgets
     phidgetsGettingstartedConnect: phidgetsGettingstartedConnect,
-    phidgetsGenericClose: phidgetsGenericClose,
     phidgetsMOT1101Connect: phidgetsMOT1101Connect,
     phidgetsMOT1101ClickSprites: phidgetsMOT1101ClickSprites,
+    phidgetsHIN1100Connect: phidgetsHIN1100Connect,
+    phidgetsHIN1100MoveSprite: phidgetsHIN1100MoveSprite,
+    phidgetsGenericClose: phidgetsGenericClose,
+
     // Intro
     introMove: introMove,
     introSayHello: introSayHello,

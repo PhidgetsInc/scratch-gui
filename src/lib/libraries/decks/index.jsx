@@ -63,28 +63,30 @@ import moveArrowKeysThumb from './thumbnails/move-arrow-keys.jpg';
 import spinThumb from './thumbnails/spin.jpg';
 
 // Phidgets
-import starterKit from './thumbnails/phidgets_starterkit.jpg';
+import phidgetsDownloadProjects from './thumbnails/phidgets_downloadprojects.jpg';
+import phidgetsStarterKit from './thumbnails/phidgets_starterkit.jpg';
 import phidgetsMOT1101 from './thumbnails/phidgets_MOT1101.jpg';
+import phidgetsHIN1100 from './thumbnails/phidgets_HIN1100.jpg';
 
 export default {
 
 
-    'phidgets-projects':{
-        name: (
-            <FormattedMessage
-                defaultMessage="Download Phidgets Scratch Projects"
-                description="Name for the 'Download Projects' how-to"
-                id="phidgets.howtos.projects.name"
-            />
-        ),
-        tags: ['phidgets', 'hardware', 'projects'],
-        requiredProjectId: 'phidgets',
-        img: starterKit,
-        steps:[{
-            video: 'phidgets_gettingstarted'
-        }],
-        urlId: 'phidgetsprojects'
-    },
+    // 'phidgets-projects':{
+    //     name: (
+    //         <FormattedMessage
+    //             defaultMessage="Download Phidgets Scratch Projects"
+    //             description="Name for the 'Download Projects' how-to"
+    //             id="phidgets.howtos.projects.name"
+    //         />
+    //     ),
+    //     tags: ['phidgets', 'hardware', 'projects', 'examples'],
+    //     requiredProjectId: 'phidgets',
+    //     img: phidgetsDownloadProjects,
+    //     steps:[{
+    //         video: 'phidgets-gettingstarted'
+    //     }],
+    //     urlId: 'phidgetsprojects'
+    // },
     'phidgets-getting-started':{
         name: (
             <FormattedMessage
@@ -94,10 +96,10 @@ export default {
             />
         ),
         tags: ['phidgets', 'hardware'],
-        //requiredProjectId: 'phidgets',
-        img: starterKit,
+        requiredProjectId: 'phidgets',
+        img: phidgetsStarterKit,
         steps:[{
-            video: 'phidgets_gettingstarted'
+            video: 'phidgets-gettingstarted'
         },{
             title:(
                 <FormattedMessage
@@ -117,27 +119,27 @@ export default {
             ),
             image: 'phidgetsGenericClose'
         }],
-        urlId: 'GettingStarted'
+        urlId: 'ExampleGettingStartedKit'
     },
     'phidgets-motion':{
         name: (
             <FormattedMessage
-                defaultMessage="Using the MOT1101"
+                defaultMessage="Using the Phidget Spatial"
                 description="Name for the 'Using the MOT1101' how-to"
                 id="phidgets.howtos.motion.name"
             />
         ),
-        tags: ['phidgets', 'hardware', 'motion', 'MOT1101'],
-        //requiredProjectId: 'phidgets',
+        tags: ['phidgets', 'hardware', 'motion', 'MOT1101', 'spatial'],
+        requiredProjectId: 'phidgets',
         img: phidgetsMOT1101,
         steps:[{
-            video: 'phidgets_mot1101'
+            video: 'phidgets-mot1101'
         },{
             title:(
                 <FormattedMessage
                     defaultMessage="Connect yo stuffs"
                     description="Step name for 'Connect to stuffs' step"
-                    id="phidgets.howtos.motion.step_connectYoStuffs"
+                    id="phidgets.howtos.spatial.step_connectYoStuffs"
                 />
             ),
             image: 'phidgetsMOT1101Connect'
@@ -146,7 +148,7 @@ export default {
                 <FormattedMessage
                     defaultMessage="Click the different sprites to see how you can use acceleration and gyroscope data"
                     description="Step name for 'Click the different sprites' step"
-                    id="phidgets.howtos.motion.step_clicksprites"
+                    id="phidgets.howtos.spatial.step_clicksprites"
                 />
             ),
             image: 'phidgetsMOT1101ClickSprites'
@@ -155,12 +157,55 @@ export default {
                 <FormattedMessage
                     defaultMessage="Click the 'Stop' button to close all attached Phidgets. Any Phidget HATs and monitored variables will automatically reconnect."
                     description="Step name for 'Close' step"
-                    id="phidgets.howtos.motion.step_close"
+                    id="phidgets.howtos.spatial.step_close"
                 />
             ),
             image: 'phidgetsGenericClose'
         }],
-        urlId: 'ExampleMOT1101'
+        urlId: 'ExampleSpatial'
+    },
+    'phidgets-thumbstick':{
+        name: (
+            <FormattedMessage
+                defaultMessage="Using the Phidget Thumbstick"
+                description="Name for the 'Using the Thumbstick' how-to"
+                id="phidgets.howtos.thumbstick.name"
+            />
+        ),
+        tags: ['phidgets', 'hardware', 'motion', 'thumbstick', 'joystick'],
+        requiredProjectId: 'phidgets',
+        img: phidgetsHIN1100,
+        steps:[{
+            video: 'phidgets-hin1100'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Connect yo stuffs"
+                    description="Step name for 'Connect to stuffs' step"
+                    id="phidgets.howtos.thumbstick.step_connectYoStuffs"
+                />
+            ),
+            image: 'phidgetsHIN1100Connect'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Press down on the thumbstick to activate the script. Move the sprite around."
+                    description="Step name for 'Press down on the thumbstick' step"
+                    id="phidgets.howtos.thumbstick.step_movesprite"
+                />
+            ),
+            image: 'phidgetsHIN1100MoveSprite'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Click the 'Stop' button to close all attached Phidgets. Any Phidget HATs and monitored variables will automatically reconnect."
+                    description="Step name for 'Close' step"
+                    id="phidgets.howtos.thumbstick.step_close"
+                />
+            ),
+            image: 'phidgetsGenericClose'
+        }],
+        urlId: 'ExampleThumbstick'
     },
 
     'intro-move-sayhello': {
