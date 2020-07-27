@@ -130,14 +130,14 @@ const videos = {
     'talking': {
         en: 'j0208mq4qi'
     },
-    'phidgets-gettingstarted':{
-        en: 'phidgets-YOMrQGB03IM'
+    'phidgets-gettingstarted':{ 
+        en: 'phidgets-xWEOPfzp6iE'
     },
     'phidgets-mot1101':{
-        en: 'phidgets-PTVgFdImkA0'
+        en: 'phidgets-JBtYBpq5uis'
     },
     'phidgets-hin1100':{
-        en: 'phidgets-wYP-yboQiFc'
+        en: 'phidgets-5v71eMofbAY'
     }
 };
 
