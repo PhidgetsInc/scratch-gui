@@ -36,6 +36,11 @@ export default defineMessages({
         description: 'Tag for filtering a library for food',
         id: 'gui.libraryTags.food'
     },
+    hardware:{
+        defaultMessage: 'Hardware',
+        description: 'Tag for filtering a library for hardware',
+        id: 'gui.libraryTags.hardware'
+    },
     indoors: {
         defaultMessage: 'Indoors',
         description: 'Tag for filtering a library for indoors',
@@ -75,6 +80,11 @@ export default defineMessages({
         defaultMessage: 'Percussion',
         description: 'Tag for filtering a library for percussion',
         id: 'gui.libraryTags.percussion'
+    },
+    phidgets:{
+        defaultMessage: 'Phidgets',
+        description: 'Tag for filtering a library for Phidgets',
+        id: 'gui.libraryTags.phidgets'
     },
     space: {
         defaultMessage: 'Space',
