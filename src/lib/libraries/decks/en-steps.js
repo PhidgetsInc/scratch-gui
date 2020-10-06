@@ -199,7 +199,25 @@ import talesDanceMoves from './steps/talking-12-dance-moves.en.gif';
 import talesAskAnswer from './steps/talking-13-ask-and-answer.en.gif';
 
 // Phidgets
-import phidgetsGettingstartedConnect from './steps/phidgets-gettingstarted-connect.jpg';
+import phidgetsGettingStartedCover from './steps/phidgets-GettingStartedCover.png';
+import phidgetsStopwatch1 from './steps/phidgets-stopwatch_1.gif';
+import phidgetsTugOfWarStep1 from './steps/phidgets-TugOfWar_Step1.png';
+import phidgetsTugOfWarStep2 from './steps/phidgets-TugOfWar_Step2.png';
+import phidgetsTugOfWarStep3 from './steps/phidgets-TugOfWar_Step3.gif';
+import phidgetsTugOfWarStep4 from './steps/phidgets-TugOfWar_Step4.gif';
+import phidgetsTugOfWarStep5 from './steps/phidgets-TugOfWar_Step5.gif';
+import phidgetsTugOfWarStep6 from './steps/phidgets-TugOfWar_Step6.gif';
+import phidgetsTugOfWarStep7 from './steps/phidgets-TugOfWar_Step7.png';
+import phidgetsWhackAMoleStep1 from './steps/phidgets-WAM_Step1.png';
+import phidgetsWhackAMoleStep2 from './steps/phidgets-WAM_Step2.gif';
+import phidgetsWhackAMoleStep4 from './steps/phidgets-WAM_Step4.png';
+import phidgetsWhackAMoleStep5 from './steps/phidgets-WAM_Step5.gif';
+import phidgetsWeatherStep1 from './steps/phidgets-Weather_Step1.gif';
+import phidgetsWeatherStep7 from './steps/phidgets-Weather_Step7.gif';
+import phidgetsJumpMoveStep1 from './steps/phidgets-JumpMove_Step1.gif';
+import phidgetsGameShowStep1 from './steps/phidgets-GameShow_Step1.png';
+import phidgetsGameShowStep9 from './steps/phidgets-GameShow_Step9.png';
+import phidgetsAddExtension from './steps/phidgets-addExtension.gif';
 import phidgetsMOT1101Connect from './steps/phidgets-MOT1101-connect.jpg';
 import phidgetsMOT1101ClickSprites from './steps/phidgets-MOT1101-clicksprites.jpg';
 import phidgetsHIN1100Connect from './steps/phidgets-HIN1100-connect.jpg';
@@ -208,7 +226,25 @@ import phidgetsGenericClose from './steps/phidgets-generic-close.jpg';
 
 const enImages = {
     //Phidgets
-    phidgetsGettingstartedConnect: phidgetsGettingstartedConnect,
+    phidgetsGettingStartedCover: phidgetsGettingStartedCover,
+    phidgetsStopwatch1:phidgetsStopwatch1,
+    phidgetsTugOfWarStep1: phidgetsTugOfWarStep1,
+    phidgetsTugOfWarStep2: phidgetsTugOfWarStep2,
+    phidgetsTugOfWarStep3: phidgetsTugOfWarStep3,
+    phidgetsTugOfWarStep4: phidgetsTugOfWarStep4,
+    phidgetsTugOfWarStep5: phidgetsTugOfWarStep5,
+    phidgetsTugOfWarStep6: phidgetsTugOfWarStep6,
+    phidgetsTugOfWarStep7: phidgetsTugOfWarStep7,
+    phidgetsWhackAMoleStep1: phidgetsWhackAMoleStep1,
+    phidgetsWhackAMoleStep2: phidgetsWhackAMoleStep2,
+    phidgetsWhackAMoleStep4: phidgetsWhackAMoleStep4,
+    phidgetsWhackAMoleStep5: phidgetsWhackAMoleStep5,
+    phidgetsWeatherStep1: phidgetsWeatherStep1,
+    phidgetsWeatherStep7: phidgetsWeatherStep7,
+    phidgetsJumpMoveStep1: phidgetsJumpMoveStep1,
+    phidgetsGameShowStep1: phidgetsGameShowStep1,
+    phidgetsGameShowStep9: phidgetsGameShowStep9,
+    phidgetsAddExtension: phidgetsAddExtension,
     phidgetsMOT1101Connect: phidgetsMOT1101Connect,
     phidgetsMOT1101ClickSprites: phidgetsMOT1101ClickSprites,
     phidgetsHIN1100Connect: phidgetsHIN1100Connect,

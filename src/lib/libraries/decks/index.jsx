@@ -1,5 +1,5 @@
 import React from 'react';
-import {FormattedMessage} from 'react-intl';
+import {FormattedMessage, defineMessages} from 'react-intl';
 
 // Tutorial thumbnails: Avoid using any text that would need to be
 // translated in thumbnails.
@@ -63,30 +63,67 @@ import moveArrowKeysThumb from './thumbnails/move-arrow-keys.jpg';
 import spinThumb from './thumbnails/spin.jpg';
 
 // Phidgets
-import phidgetsDownloadProjects from './thumbnails/phidgets_downloadprojects.jpg';
-import phidgetsStarterKit from './thumbnails/phidgets_starterkit.jpg';
-import phidgetsMOT1101 from './thumbnails/phidgets_MOT1101.jpg';
-import phidgetsHIN1100 from './thumbnails/phidgets_HIN1100.jpg';
+import phidgetsStarterKit from './thumbnails/phidgets-GettingStartedCover.png';
+import phidgetsStopwatch from './thumbnails/phidgets-stopwatchCover.png';
+import phidgetsTugOfWar from './thumbnails/phidgets-TugOfWarCover.png';
+import phidgetsWhackAMole from './thumbnails/phidgets-WhackAMoleCover.png';
+import phidgetsWeather from './thumbnails/phidgets-WeatherCover.png';
+import phidgetsJumpMove from './thumbnails/phidgets-JumpMoveCover.png';
+import phidgetsGameShow from './thumbnails/phidgets-GameShowCover.png';
+//import phidgetsMOT1101 from './thumbnails/phidgets_MOT1101.jpg';
+//import phidgetsHIN1100 from './thumbnails/phidgets_HIN1100.jpg';
+
+const messages = defineMessages({
+    tugOfWarStep2Block: {
+        defaultMessage:"The goal of the game is to move the arrow to point at your dinosaur.\nTo move the arrow, you must press the buttons.",
+        description: "Step name for 'Goal of the game' step",
+        id: "phidgets.howtos.tug-of-war.step_goalOfTheGame",
+    },
+    tugOfWarStep3Block: {        
+        defaultMessage:"A red button press will move the arrow to the left.\nA green button press will move the arrow to the right.",
+        description:"Step name for 'Red left, Green right' step",
+        id:"phidgets.howtos.tug-of-war.step_redLeftGreenRight",
+    },
+    tugOfWarStep4Block: {        
+        defaultMessage:"Press the green flag to begin; each player must press \ntheir buttons until one player moves the arrow to their dinosaur.",
+        description:"Step name for 'Press green flag to begin' step",
+        id:"phidgets.howtos.tug-of-war.step_pressGreenFlag",
+    },
+    whackAMoleStep2Block: {
+        defaultMessage:"Every time an LED is turned on (mole appears), you must press \nthe matching colored button to turn the LED off (\"whack the mole\").",
+        description:"Step name for 'LED turned on' step",
+        id:"phidgets.howtos.whack-a-mole.step_ledTurnedOn",
+    },
+    weatherReportStep7Block: {
+        defaultMessage:"Add the When Green Flag Clicked event \nblock to the start to run your code.",
+        description:"Step name for 'Add green flag event block' step",
+        id:"phidgets.howtos.weather-report.step_addGreenFlagEventBlock"
+    },
+    weatherReportStep9Block: {
+        defaultMessage:"Bonus: Add more costumes and temperature ranges. \nUse your LEDs to indicate if it is Hot or Cold. \nYou can also report the Humidity using the HumiditySensor Block.",
+        description:"Step name for 'Bonus' step",
+        id:"phidgets.howtos.weather-report.step_bonus"
+    },
+    phidgetsJumpMoveStep8Block:{
+        defaultMessage:"Test your Code! Try adding in some obstacles \nin the background for your Sprite to Jump over.",
+        description:"Step name for 'Test your Code' step",
+        id:"phidgets.howtos.jump-and-move.step_testYourCode"
+    },
+    phidgetsGameShowStep6Block:{
+        defaultMessage:"If you run your code you will notice that both \nthe players can buzz in at the same time, to prevent \nthis we need to add a variable and If... Then blocks .",
+        description:"Step name for 'Buzz At Same Time' step",
+        id:"phidgets.howtos.game-show.step_buzzAtSameTime"
+    }
+})
+
+function linesToParagraphs(...nodes) {
+    return nodes
+        .map(node => typeof node === 'string' ?
+        node.split('\n').map(text => <div>{text}<br/></div>) : node)
+        .reduce((nodes, node) => nodes.concat(node), []);
+}
 
 export default {
-
-
-    // 'phidgets-projects':{
-    //     name: (
-    //         <FormattedMessage
-    //             defaultMessage="Download Phidgets Scratch Projects"
-    //             description="Name for the 'Download Projects' how-to"
-    //             id="phidgets.howtos.projects.name"
-    //         />
-    //     ),
-    //     tags: ['phidgets', 'hardware', 'projects', 'examples'],
-    //     requiredProjectId: 'phidgets',
-    //     img: phidgetsDownloadProjects,
-    //     steps:[{
-    //         video: 'phidgets-gettingstarted'
-    //     }],
-    //     urlId: 'phidgetsprojects'
-    // },
     'phidgets-getting-started':{
         name: (
             <FormattedMessage
@@ -95,118 +132,463 @@ export default {
                 id="phidgets.howtos.getting-started.name"
             />
         ),
-        tags: ['phidgets', 'hardware'],
-        requiredProjectId: 'phidgets',
+        tags: ['phidgets', 'hardware', 'getting', 'start'],
+        //requiredProjectId: 'phidgets',        //required for downloading projects
         img: phidgetsStarterKit,
         steps:[{
-            video: 'phidgets-gettingstarted'
+            title:(
+                <FormattedMessage
+                    defaultMessage="Getting Started with Phidgets Getting Started Blocks"
+                    description="Step name for 'Getting Started with Phidgets Getting Started Blocks' step"
+                    id="phidgets.howtos.getting-started.step_gettingStarted"
+                />
+            ),
+            image: 'phidgetsGettingStartedCover'
         },{
             title:(
                 <FormattedMessage
-                    defaultMessage="Connect yo stuffs"
-                    description="Step name for 'Connect to stuffs' step"
-                    id="phidgets.howtos.getting-started.step_connectYoStuffs"
+                    defaultMessage="Before you begin, add the Phidget Extension"
+                    description="Step name for 'Add Extension' step"
+                    id="phidgets.howtos.getting-started.step_addExtension"
                 />
             ),
-            image: 'phidgetsGettingstartedConnect'
+            image: 'phidgetsAddExtension'
         },{
-            title:(
-                <FormattedMessage
-                    defaultMessage="Click the 'Stop' button to close all attached Phidgets. Any Phidget HATs and monitored variables will automatically reconnect."
-                    description="Step name for 'Close' step"
-                    id="phidgets.howtos.getting-started.step_close"
-                />
-            ),
-            image: 'phidgetsGenericClose'
+            video: 'phidgets-gettingstarted3'
+        },{
+            video: 'phidgets-gettingstarted4'
+        },{
+            video: 'phidgets-gettingstarted5'
+        },{
+            video: 'phidgets-gettingstarted6'
+        },{
+            video: 'phidgets-gettingstarted7'
+        },{
+            video: 'phidgets-gettingstarted8'
+        },{
+            video: 'phidgets-gettingstarted9'
         }],
-        urlId: 'ExampleGettingStartedKit'
     },
-    'phidgets-motion':{
+    'phidgets-stopwatch':{
         name: (
             <FormattedMessage
-                defaultMessage="Using the Phidget Spatial"
-                description="Name for the 'Using the MOT1101' how-to"
-                id="phidgets.howtos.motion.name"
+                defaultMessage="Stopwatch"
+                description="Name for the 'Stopwatch' how-to"
+                id="phidgets.howtos.stopwatch.name"
             />
         ),
-        tags: ['phidgets', 'hardware', 'motion', 'MOT1101', 'spatial'],
-        requiredProjectId: 'phidgets',
-        img: phidgetsMOT1101,
+        tags: ['phidgets', 'hardware', 'stop', 'watch', 'timer'],
+        //requiredProjectId: 'phidgets',        //required for downloading projects
+        img: phidgetsStopwatch,
         steps:[{
-            video: 'phidgets-mot1101'
+            title:(
+                <FormattedMessage
+                    defaultMessage="Create a Stopwatch using your Buttons"
+                    description="Step name for 'Create a Stopwatch using your Buttons' step"
+                    id="phidgets.howtos.stopwatch.step_createStopwatchUsingButtons"
+                />
+            ),
+            image: 'phidgetsStopwatch1'
         },{
             title:(
                 <FormattedMessage
-                    defaultMessage="Connect yo stuffs"
-                    description="Step name for 'Connect to stuffs' step"
-                    id="phidgets.howtos.spatial.step_connectYoStuffs"
+                    defaultMessage="Before you begin, add the Phidget Extension"
+                    description="Step name for 'Add Extension' step"
+                    id="phidgets.howtos.stopwatch.step_addExtension"
                 />
             ),
-            image: 'phidgetsMOT1101Connect'
+            image: 'phidgetsAddExtension'
         },{
-            title:(
-                <FormattedMessage
-                    defaultMessage="Click the different sprites to see how you can use acceleration and gyroscope data"
-                    description="Step name for 'Click the different sprites' step"
-                    id="phidgets.howtos.spatial.step_clicksprites"
-                />
-            ),
-            image: 'phidgetsMOT1101ClickSprites'
+            video: 'phidgets-stopwatch3'
         },{
-            title:(
-                <FormattedMessage
-                    defaultMessage="Click the 'Stop' button to close all attached Phidgets. Any Phidget HATs and monitored variables will automatically reconnect."
-                    description="Step name for 'Close' step"
-                    id="phidgets.howtos.spatial.step_close"
-                />
-            ),
-            image: 'phidgetsGenericClose'
+            video: 'phidgets-stopwatch4'
+        },{
+            video: 'phidgets-stopwatch5'
+        },{
+            video: 'phidgets-stopwatch6'
         }],
-        urlId: 'ExampleSpatial'
     },
-    'phidgets-thumbstick':{
+    'phidgets-tug-of-war':{
         name: (
             <FormattedMessage
-                defaultMessage="Using the Phidget Thumbstick"
-                description="Name for the 'Using the Thumbstick' how-to"
-                id="phidgets.howtos.thumbstick.name"
+                defaultMessage="Example: Tug Of War"
+                description="Name for the 'Tug of War' how-to"
+                id="phidgets.howtos.tug-of-war.name"
             />
         ),
-        tags: ['phidgets', 'hardware', 'motion', 'thumbstick', 'joystick'],
+        tags: ['phidgets', 'hardware', 'game', 'tug', 'war'],
         requiredProjectId: 'phidgets',
-        img: phidgetsHIN1100,
+        img: phidgetsTugOfWar,
         steps:[{
-            video: 'phidgets-hin1100'
+            title:(
+                <FormattedMessage
+                    defaultMessage="There are two players, red and green"
+                    description="Step name for 'There are two players, red and green' step"
+                    id="phidgets.howtos.tug-of-war.step_twoPlayers"
+                />
+            ),
+            image: 'phidgetsTugOfWarStep1'
+        },{
+            title:(
+                <FormattedMessage {...messages.tugOfWarStep2Block}>
+                    {linesToParagraphs}
+                </FormattedMessage>                
+            ),
+            image: 'phidgetsTugOfWarStep2'
+        },{
+            title:(
+                <FormattedMessage {...messages.tugOfWarStep3Block}>
+                    {linesToParagraphs}
+                </FormattedMessage>
+            ),
+            image: 'phidgetsTugOfWarStep3'
+        },{
+            title:(
+                <FormattedMessage {...messages.tugOfWarStep4Block}>
+                    {linesToParagraphs}
+                </FormattedMessage>
+            ),
+            image: 'phidgetsTugOfWarStep4'
         },{
             title:(
                 <FormattedMessage
-                    defaultMessage="Connect yo stuffs"
-                    description="Step name for 'Connect to stuffs' step"
-                    id="phidgets.howtos.thumbstick.step_connectYoStuffs"
+                    defaultMessage="When a Player succeeds, the winner will be displayed."
+                    description="Step name for 'Player Succeeds' step"
+                    id="phidgets.howtos.tug-of-war.step_playerSucceeds"
                 />
             ),
-            image: 'phidgetsHIN1100Connect'
+            image: 'phidgetsTugOfWarStep5'
         },{
             title:(
                 <FormattedMessage
-                    defaultMessage="Press down on the thumbstick to activate the script. Move the sprite around."
-                    description="Step name for 'Press down on the thumbstick' step"
-                    id="phidgets.howtos.thumbstick.step_movesprite"
+                    defaultMessage="Press the Green flag to play again."
+                    description="Step name for 'Play again' step"
+                    id="phidgets.howtos.tug-of-war.step_playAgain"
                 />
             ),
-            image: 'phidgetsHIN1100MoveSprite'
+            image: 'phidgetsTugOfWarStep6'
         },{
             title:(
                 <FormattedMessage
-                    defaultMessage="Click the 'Stop' button to close all attached Phidgets. Any Phidget HATs and monitored variables will automatically reconnect."
-                    description="Step name for 'Close' step"
-                    id="phidgets.howtos.thumbstick.step_close"
+                    defaultMessage="Explore the code in the three Sprites to learn more about how this program works."
+                    description="Step name for 'Explore the code' step"
+                    id="phidgets.howtos.tug-of-war.step_exploreTheCode"
                 />
             ),
-            image: 'phidgetsGenericClose'
-        }],
-        urlId: 'ExampleThumbstick'
+            image: 'phidgetsTugOfWarStep7'
+        },],
+        urlId: 'TugOfWar'
     },
+    'phidgets-whack-a-mole':{
+        name: (
+            <FormattedMessage
+                defaultMessage="Example: Whack-A-Mole"
+                description="Name for the 'Whack-A-Mole' how-to"
+                id="phidgets.howtos.whack-a-mole.name"
+            />
+        ),
+        tags: ['phidgets', 'hardware', 'game', 'whack', 'mole'],
+        requiredProjectId: 'phidgets',
+        img: phidgetsWhackAMole,
+        steps:[{
+            title:(
+                <FormattedMessage
+                    defaultMessage="This is a one player Game modeled after the whack-a-mole carnival game."
+                    description="Step name for 'One Player Game' step"
+                    id="phidgets.howtos.whack-a-mole.step_onePlayerGame"
+                />
+            ),
+            image: 'phidgetsWhackAMoleStep1'
+        },{
+            title:(
+                
+                <FormattedMessage {...messages.whackAMoleStep2Block}>
+                    {linesToParagraphs}
+                </FormattedMessage>
+            ),
+            image: 'phidgetsWhackAMoleStep2'
+        },{
+            video: 'phidgets-whackamole3'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Click the green flag to start the game and reset the game."
+                    description="Step name for 'Press green flag to begin' step"
+                    id="phidgets.howtos.whack-a-mole.step_pressGreenFlag"
+                />
+            ),
+            image: 'phidgetsWhackAMoleStep4'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Explore the code to learn more about how this program works."
+                    description="Step name for 'Explore the code' step"
+                    id="phidgets.howtos.whack-a-mole.step_exploreTheCode"
+                />
+            ),
+            image: 'phidgetsWhackAMoleStep5'
+        },],
+        urlId: 'Whack-a-mole'
+    },
+    'phidgets-weatherReport':{
+        name: (
+            <FormattedMessage
+                defaultMessage="Weather Report"
+                description="Name for the 'Weather Report' how-to"
+                id="phidgets.howtos.weather-report.name"
+            />
+        ),
+        tags: ['phidgets', 'hardware', 'game', 'weather', 'report', 'humidity', 'temperature'],
+        requiredProjectId: 'phidgets',
+        img: phidgetsWeather,
+        steps:[{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Use the Humidity Phidget to report the Weather"
+                    description="Step name for 'Use the Humidity Phidget' step"
+                    id="phidgets.howtos.weather-report.step_useHumidityPhidget"
+                />
+            ),
+            image: 'phidgetsWeatherStep1'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Before you begin, add the Phidget Extension"
+                    description="Step name for 'Add Extension' step"
+                    id="phidgets.howtos.weather-report.step_addExtension"
+                />
+            ),
+            image: 'phidgetsAddExtension'
+        },{
+            video: 'phidgets-weather3'
+        },{
+            video: 'phidgets-weather4'
+        },{
+            video: 'phidgets-weather5'
+        },{
+            video: 'phidgets-weather6'
+        },{
+            title:(                
+                <FormattedMessage {...messages.weatherReportStep7Block}>
+                    {linesToParagraphs}
+                </FormattedMessage>
+            ),
+            image: 'phidgetsWeatherStep7'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Run your program to see the weather report!"
+                    description="Step name for 'Run program' step"
+                    id="phidgets.howtos.weather-report.step_runProgram"
+                />
+            ),
+            image: 'phidgetsWeatherStep1'
+        },{
+            title:(                
+                <FormattedMessage {...messages.weatherReportStep9Block}>
+                    {linesToParagraphs}
+                </FormattedMessage>
+            ),
+        }],
+        urlId: 'WeatherReport'
+    },
+    'phidgets-JumpAndMove':{
+        name: (
+            <FormattedMessage
+                defaultMessage="Jump and Move"
+                description="Name for the 'Jump and Move' how-to"
+                id="phidgets.howtos.jump-and-move.name"
+            />
+        ),
+        tags: ['phidgets', 'hardware', 'game', 'jump', 'move', 'button'],
+        requiredProjectId: 'phidgets',
+        img: phidgetsJumpMove,
+        steps:[{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Jump and Move using your Buttons"
+                    description="Step name for 'Jump and Move using your Buttons' step"
+                    id="phidgets.howtos.jump-and-move.step_jumpAndMoveUsingYourButtons"
+                />
+            ),
+            image: 'phidgetsJumpMoveStep1'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Before you begin, add the Phidget Extension"
+                    description="Step name for 'Add Extension' step"
+                    id="phidgets.howtos.jump-and-move.step_addExtension"
+                />
+            ),
+            image: 'phidgetsAddExtension'
+        },{
+            video: 'phidgets-jumpMove3'
+        },{
+            video: 'phidgets-jumpMove4'
+        },{
+            video: 'phidgets-jumpMove5'
+        },{
+            video: 'phidgets-jumpMove6'
+        },{
+            video: 'phidgets-jumpMove7'
+        },{
+            title:(
+                
+                <FormattedMessage {...messages.phidgetsJumpMoveStep8Block}>
+                    {linesToParagraphs}
+                </FormattedMessage>
+            ),
+            image: 'phidgetsJumpMoveStep1'
+        }],
+        urlId: 'JumpAndMove'
+    },
+    'phidgets-GameShowBuzzer':{
+        name: (
+            <FormattedMessage
+                defaultMessage="Game Show Buzzer"
+                description="Name for the 'Game Show Buzzer' how-to"
+                id="phidgets.howtos.game-show-buzzer.name"
+            />
+        ),
+        tags: ['phidgets', 'hardware', 'game', 'show', 'buzzer', 'button', 'led'],
+        requiredProjectId: 'phidgets',
+        img: phidgetsGameShow,
+        steps:[{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Build a two player Game Show Buzzer with your LEDs and Buttons"
+                    description="Step name for 'Build two player Game' step"
+                    id="phidgets.howtos.game-show-buzzer.step_buildTwoPlayerGame"
+                />
+            ),
+            image: 'phidgetsGameShowStep1'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Before you begin, add the Phidget Extension"
+                    description="Step name for 'Add Extension' step"
+                    id="phidgets.howtos.game-show-buzzer.step_addExtension"
+                />
+            ),
+            image: 'phidgetsAddExtension'
+        },{
+            video: 'phidgets-gameShow3'
+        },{
+            video: 'phidgets-gameShow4'
+        },{
+            video: 'phidgets-gameShow5'
+        },{
+            title:(
+                
+                <FormattedMessage {...messages.phidgetsGameShowStep6Block}>
+                    {linesToParagraphs}
+                </FormattedMessage>
+            ),
+            //image: 'phidgetsGameShowStep6'
+        },{
+            video: 'phidgets-gameShow7'
+        },{
+            video: 'phidgets-gameShow8'
+        },{
+            title:(
+                <FormattedMessage
+                    defaultMessage="Repeat for the Green button"
+                    description="Step name for 'Repeat for Green Button' step"
+                    id="phidgets.howtos.game-show-buzzer.step_repeatGreenButton"
+                />
+            ),
+            image: 'phidgetsGameShowStep9'
+        },{
+            video: 'phidgets-gameShow10'
+        }],
+        urlId: 'GameShowBuzzer'
+    },
+    // 'phidgets-motion':{
+    //     name: (
+    //         <FormattedMessage
+    //             defaultMessage="Using the Phidget Spatial"
+    //             description="Name for the 'Using the MOT1101' how-to"
+    //             id="phidgets.howtos.motion.name"
+    //         />
+    //     ),
+    //     tags: ['phidgets', 'hardware', 'motion', 'MOT1101', 'spatial'],
+    //     requiredProjectId: 'phidgets',
+    //     img: phidgetsMOT1101,
+    //     steps:[{
+    //         video: 'phidgets-mot1101'
+    //     },{
+    //         title:(
+    //             <FormattedMessage
+    //                 defaultMessage="Connect yo stuffs"
+    //                 description="Step name for 'Connect to stuffs' step"
+    //                 id="phidgets.howtos.spatial.step_connectYoStuffs"
+    //             />
+    //         ),
+    //         image: 'phidgetsMOT1101Connect'
+    //     },{
+    //         title:(
+    //             <FormattedMessage
+    //                 defaultMessage="Click the different sprites to see how you can use acceleration and gyroscope data"
+    //                 description="Step name for 'Click the different sprites' step"
+    //                 id="phidgets.howtos.spatial.step_clicksprites"
+    //             />
+    //         ),
+    //         image: 'phidgetsMOT1101ClickSprites'
+    //     },{
+    //         title:(
+    //             <FormattedMessage
+    //                 defaultMessage="Click the 'Stop' button to close all attached Phidgets. Any Phidget HATs and monitored variables will automatically reconnect."
+    //                 description="Step name for 'Close' step"
+    //                 id="phidgets.howtos.spatial.step_close"
+    //             />
+    //         ),
+    //         image: 'phidgetsGenericClose'
+    //     }],
+    //     urlId: 'ExampleSpatial'
+    // },
+    // 'phidgets-thumbstick':{
+    //     name: (
+    //         <FormattedMessage
+    //             defaultMessage="Using the Phidget Thumbstick"
+    //             description="Name for the 'Using the Thumbstick' how-to"
+    //             id="phidgets.howtos.thumbstick.name"
+    //         />
+    //     ),
+    //     tags: ['phidgets', 'hardware', 'motion', 'thumbstick', 'joystick'],
+    //     requiredProjectId: 'phidgets',
+    //     img: phidgetsHIN1100,
+    //     steps:[{
+    //         video: 'phidgets-hin1100'
+    //     },{
+    //         title:(
+    //             <FormattedMessage
+    //                 defaultMessage="Connect yo stuffs"
+    //                 description="Step name for 'Connect to stuffs' step"
+    //                 id="phidgets.howtos.thumbstick.step_connectYoStuffs"
+    //             />
+    //         ),
+    //         image: 'phidgetsHIN1100Connect'
+    //     },{
+    //         title:(
+    //             <FormattedMessage
+    //                 defaultMessage="Press down on the thumbstick to activate the script. Move the sprite around."
+    //                 description="Step name for 'Press down on the thumbstick' step"
+    //                 id="phidgets.howtos.thumbstick.step_movesprite"
+    //             />
+    //         ),
+    //         image: 'phidgetsHIN1100MoveSprite'
+    //     },{
+    //         title:(
+    //             <FormattedMessage
+    //                 defaultMessage="Click the 'Stop' button to close all attached Phidgets. Any Phidget HATs and monitored variables will automatically reconnect."
+    //                 description="Step name for 'Close' step"
+    //                 id="phidgets.howtos.thumbstick.step_close"
+    //             />
+    //         ),
+    //         image: 'phidgetsGenericClose'
+    //     }],
+    //     urlId: 'ExampleThumbstick'
+    // },
 
     'intro-move-sayhello': {
         name: (

@@ -143,7 +143,7 @@ class VideoStep extends React.Component {
                     <iframe 
                         width="466px"
                         height="257px"
-                        src={`https://www.youtube.com/embed/${phidVid}`}
+                        src={`https://www.youtube.com/embed/${phidVid}?rel=0`}
                         frameBorder="0" 
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                         allowFullScreen>

@@ -130,15 +130,93 @@ const videos = {
     'talking': {
         en: 'j0208mq4qi'
     },
-    'phidgets-gettingstarted':{ 
-        en: 'phidgets-xWEOPfzp6iE'
+    'phidgets-gettingstarted3':{ 
+        en: 'phidgets-JgwMkLUefXo'
     },
-    'phidgets-mot1101':{
-        en: 'phidgets-JBtYBpq5uis'
+    'phidgets-gettingstarted4':{ 
+        en: 'phidgets-Y980POXV6WI'
     },
-    'phidgets-hin1100':{
-        en: 'phidgets-5v71eMofbAY'
-    }
+    'phidgets-gettingstarted5':{ 
+        en: 'phidgets-pjQkOUx7gUg'
+    },
+    'phidgets-gettingstarted6':{ 
+        en: 'phidgets-8kP_De6mQ_s'
+    },
+    'phidgets-gettingstarted7':{ 
+        en: 'phidgets-uzOtCPTsWkw'
+    },
+    'phidgets-gettingstarted8':{ 
+        en: 'phidgets-Ib3ecuPKbOQ'
+    },
+    'phidgets-gettingstarted9':{ 
+        en: 'phidgets-JH8mEf_fAHw'
+    },
+    'phidgets-stopwatch3':{ 
+        en: 'phidgets-CcUF8lHxcl4'
+    },
+    'phidgets-stopwatch4':{ 
+        en: 'phidgets-x5V1AeRpPwE'
+    },
+    'phidgets-stopwatch5':{ 
+        en: 'phidgets-MdVpB41RAG0'
+    },
+    'phidgets-stopwatch6':{ 
+        en: 'phidgets-4WQIt5MYYIM'
+    },
+    'phidgets-whackamole3':{ 
+        en: 'phidgets-ygtflPR17Gg'
+    },
+    'phidgets-weather3':{ 
+        en: 'phidgets-yvbkUUTU-wI'
+    },
+    'phidgets-weather4':{ 
+        en: 'phidgets-BnPhxKf8B6M'
+    },
+    'phidgets-weather5':{ 
+        en: 'phidgets-WckILYgbe1g'
+    },
+    'phidgets-weather6':{ 
+        en: 'phidgets-rEXqZ1b3VXE'
+    },
+    'phidgets-jumpMove3':{ 
+        en: 'phidgets-cheb2p9UR2U'
+    },
+    'phidgets-jumpMove4':{ 
+        en: 'phidgets-4wYFizy3cs4'
+    },
+    'phidgets-jumpMove5':{ 
+        en: 'phidgets-vOsNZ3iDnkE'
+    },
+    'phidgets-jumpMove6':{ 
+        en: 'phidgets-ezMlk4MaFao'
+    },
+    'phidgets-jumpMove7':{ 
+        en: 'phidgets-r7TN5ZQ_bmg'
+    },
+    'phidgets-gameShow3':{ 
+        en: 'phidgets-64O0U_Mz5uY'
+    },
+    'phidgets-gameShow4':{ 
+        en: 'phidgets-2OR2_BvbHUc'
+    },
+    'phidgets-gameShow5':{ 
+        en: 'phidgets-pvutdZixcGk'
+    },
+    'phidgets-gameShow7':{ 
+        en: 'phidgets-RWEcyn4Ic6I'
+    },
+    'phidgets-gameShow8':{ 
+        en: 'phidgets-fuuNZ_aal1U'
+    },
+    'phidgets-gameShow10':{ 
+        en: 'phidgets-nZjRgF94sPY'
+    },
+    // 'phidgets-mot1101':{
+    //     en: 'phidgets-JBtYBpq5uis'
+    // },
+    // 'phidgets-hin1100':{
+    //     en: 'phidgets-5v71eMofbAY'
+    // }
 };
 
 /**
